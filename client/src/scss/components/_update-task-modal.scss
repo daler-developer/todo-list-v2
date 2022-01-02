@@ -1,0 +1,15 @@
+.update-task-modal {
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__submit-btn {
+    margin-top: 30px;
+    background-color: blue;
+    color: white;
+    height: 28px;
+    border-radius: 3px;
+    padding: 5px;
+  }
+}

@@ -1,0 +1,93 @@
+.task {
+  display: flex;
+  height: 40px;
+  gap: 10px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.292);
+  }
+  &--completed {
+
+    .task__text {
+      text-decoration: line-through;
+    }
+  }
+  &__body {
+    flex: 1 0 0;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+  }
+  &__is-completed-checkbox {
+    flex: 0 0 auto;
+  }
+  &__text {
+    flex: 1 0 0;
+    white-space: nowrap;
+    overflow: auto;
+  }
+  &__edit-task-input, &__edit-task-form {
+    flex: 1 0 0;
+  }
+  &__edit-task-form {
+    align-self: stretch;
+  }
+  &__edit-task-input {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.054);
+    text-indent: 5px;
+
+    &--error {
+      border: 1px solid rgb(181, 14, 14);;
+    }
+  }
+  &__menu-btn-wrapper {
+    @include flex-center;
+    align-self: center;
+    position: relative;
+  }
+  &__open-menu-btn {
+    flex: 0 0 0;
+    font-size: 22px;
+    color: rgb(108, 107, 107);
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    border-radius: 3px;
+    top: 3px;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.762);
+    z-index: 500;
+    overflow: hidden;
+
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+  &__menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 30px;
+    padding: 3px 8px;
+    font-size: 15.5px;
+    color: grey;
+
+    &:hover {
+      color: black;
+      background-color: rgba(0, 0, 0, 0.081);
+    }
+  }
+  &__edit-task-input {
+
+  }
+}

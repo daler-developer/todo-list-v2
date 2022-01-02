@@ -1,0 +1,122 @@
+.home-page {
+  background-color: rgb(241, 241, 241);
+  padding: 5px;
+  min-height: 100vh;
+
+  &__main {
+    @include push--auto;
+    max-width: 500px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: white;
+  }
+  &__header, &__body {
+    padding: 0 10px;
+  }
+  &__logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgb(181, 14, 14);
+    border-radius: 3px;
+    font-size: 22px;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 900;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+  &__search-input {
+    height: 30px;
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.048);
+  }
+  &__filter-menu-wrapper {
+    padding: 0 5px;
+    border: 1px solid #000;
+  }
+  &__filter-btn {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+  }
+  &__loader {
+    align-self: center;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 4px solid grey;
+    border-left-color: transparent;
+    animation: spinner-rotate 1s infinite;
+    border-radius: 50%;
+  }
+  &__no-tasks-info {
+    margin-top: 10px;
+    text-align: center;
+  }
+  &__tasks-list {
+    margin-top: 10px;
+  }
+  &__create-task-form {
+    margin-top: 10px;
+  }
+  &__create-task-text-input {
+    width: 100%;
+    height: 30px;
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.047);
+
+    &--error {
+      border: 1px solid rgb(181, 14, 14);
+    }
+  }
+  &__footer {
+    margin-top: 10px;
+    padding: 0 10px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(238, 238, 168);
+    user-select: none;
+  }
+  &__footer-left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  &__footer-right {
+    display: flex;
+    align-items: center;
+  }
+  &__footer-btn {
+    font-size: 22px;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+  &__tasks-left-info {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  &__filter-btn-wrapper {
+    border: 1px solid #000;
+  }
+  &__filter-menu {
+    display: none;
+  }
+}

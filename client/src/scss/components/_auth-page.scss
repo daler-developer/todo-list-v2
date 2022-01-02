@@ -1,0 +1,76 @@
+.auth-page {
+  background-color: rgb(241, 241, 241);
+  min-height: 100vh;
+  padding: 10px;
+
+  &__form {
+    @include push--auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: white;
+  }
+  &__title {
+    font-size: 17px;
+    text-align: center;
+  }
+  &__input-group {
+    margin-top: 5px;
+    display: flex;
+    height: 34px;
+    color: grey;
+  }
+  &__icon-wrapper {
+    @include flex-center;
+    flex: 0 0 0;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid rgba(0, 0, 0, 0.218);
+    border-right-color: transparent;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  &__input {
+    height: 100%;
+    flex: 1 0 0;
+    padding: 0 5px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0.218);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+    &--error {
+      border: 1px solid rgb(181, 14, 14);;
+    }
+  }
+  &__icon {
+    font-size: 22px;
+  }
+  &__submit-btn {
+    background-color: #3390EC;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+    height: 28px;
+    margin-top: 30px;
+    font-size: 18px;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+  &__footer {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #3390EC;
+    text-align: center;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
