@@ -30,7 +30,7 @@ const start = async () => {
   try {
     await mongoose.connect('mongodb+srv://dalersaidov:2000909k@cluster-for-learning.uecly.mongodb.net/todo-list-mern?retryWrites=true&w=majority')
   
-    app.listen(process.PORT || 4000)
+    app.listen(process.env.PORT || 4000)
   } catch (e) {
     console.log('error')
   }
