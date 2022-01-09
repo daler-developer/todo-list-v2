@@ -2,15 +2,19 @@ import classNames from 'classnames'
 import pt from 'prop-types'
 
 
-const LoadingButton = ({ isLoading, className, restProps, classes, children, type }) => {
+const LoadingButton = ({ isLoading, className, restProps, classes, children, type, onClick }) => {
   return (
-    <button {...restProps?.root} type={type || 'button'} className={classNames('loading-button', classes?.root, className)} disabled={isLoading}>
+    <button {...restProps?.root} type={type || 'button'} className={classNames('loading-button', classes?.root, className)} disabled={isLoading} onClick={onClick}>
       {isLoading ? (
         <div
           className={classNames('loading-button__spinner', classes?.spinner)}
           {...restProps?.spinner}
         />
-      ) : children}
+      ) : (
+        <span className="loading-button__text">
+          {children}
+        </span>
+      )}
     </button>
   )
 }
@@ -21,7 +25,8 @@ LoadingButton.propTypes = {
   restProps: pt.object,
   classes: pt.object,
   children: pt.any.isRequired,
-  type: pt.oneOf(['button', 'submit'])
+  type: pt.oneOf(['button', 'submit']),
+  onClick: pt.func
 }
 
 export default LoadingButton

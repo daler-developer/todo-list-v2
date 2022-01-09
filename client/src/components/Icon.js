@@ -9,12 +9,12 @@ const Icon = ({ className, variant, children }) => {
       case 'outlined':
         return 'material-icons-outlined'
       case 'filled':
-        return 'material-icons-outlined'
+        return 'material-icons-filled'
     }
   }
 
   return (
-    <span className={classNames('icon', getTypeClassName(variant || 'outlined'), className)}>
+    <span className={classNames('icon', getTypeClassName(variant || 'outlined'), className)} role="icon">
       {children}
     </span>
   )

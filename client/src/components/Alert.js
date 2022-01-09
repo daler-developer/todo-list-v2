@@ -20,11 +20,14 @@ export default () => {
 
 
   return (
-    <div className={classNames('alert', {
-      'alert--hidden': alert.isHidden,
-      'alert--success': alert?.type === 'success',
-      'alert--error': alert?.type === 'error' 
-    })}>
+    <div
+      role="alert-box"
+      className={classNames('alert', {
+        'alert--hidden': alert.isHidden,
+        'alert--success': alert?.type === 'success',
+        'alert--error': alert?.type === 'error' 
+      })}
+    >
       {alert?.text}
     </div>
   )

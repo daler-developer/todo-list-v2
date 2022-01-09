@@ -8,13 +8,13 @@ import { tasksActions } from 'redux/reducers/tasksReducer'
 import Icon from './Icon'
 
 
-const Task = ({ data }) => {
+const Task = ({ data, className }) => {
   const [isMenuHidden, setIsMenuHidden] = useState(true)
   const [isEditFormHidden, setIsEditFormHidden] = useState(true)
 
   const menuRef = useRef(null)
   const editFormRef = useRef(null)
-  const editTaskTextInputRef = useRef()
+  const editTaskTextInputRef = useRef(null)
 
   const editForm = useFormik({
     initialValues: {
@@ -84,7 +84,7 @@ const Task = ({ data }) => {
   }
 
   return (
-    <div className={classNames('task', { 'task--completed': data.isCompleted })}>
+    <div className={classNames('task', { 'task--completed': data.isCompleted }, className )} role="task">
       
 
       <div className="task__body">
@@ -94,14 +94,15 @@ const Task = ({ data }) => {
           type="checkbox"
           checked={data.isCompleted}
           onChange={handleIsCompletedChange}
+          role="task-checkbox"
         />
 
         {isEditFormHidden ? (
-          <span className={classNames('task__text')} title={data.text}>
+          <span className={classNames('task__text')} title={data.text} role="task-text">
             {data.text}
           </span>
         ) : (
-          <form className="task__edit-task-form" onSubmit={editForm.handleSubmit} ref={editFormRef}>
+          <form className="task__edit-task-form" onSubmit={editForm.handleSubmit} ref={editFormRef} role="task-edit-form">
             <input 
               type="text" 
               className={classNames('task__edit-task-input', { 'task__edit-task-input--error': editForm.touched.text && editForm.errors.text } )} 
@@ -117,16 +118,16 @@ const Task = ({ data }) => {
 
       <div className="task__menu-btn-wrapper">
 
-        <button className="task__open-menu-btn" onClick={handleOpenMenuBtnClick}>
+        <button className="task__open-menu-btn" onClick={handleOpenMenuBtnClick} role="task-open-menu-btn">
           <Icon
             children='more_vert'
           />
         </button>
 
-        <div className={classNames('task__menu', { 'task__menu--hidden': isMenuHidden })} ref={menuRef}>
+        <div className={classNames('task__menu', { 'task__menu--hidden': isMenuHidden })} ref={menuRef} role="task-menu">
 
 
-          <button className="task__menu-btn" type="button" onClick={handleEditTaskBtnClick}>
+          <button className="task__menu-btn" type="button" onClick={handleEditTaskBtnClick} role="task-edit-btn">
             <Icon
               children="edit"
             />
