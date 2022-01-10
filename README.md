@@ -11,6 +11,7 @@ Welcome to web app to increase your productivity 👋
  - Back-end: [Express](https://expressjs.com/ru/) / [Node.js](https://nodejs.org/en/)
  - Database: [MongoDB](https://www.mongodb.com/)
  - Deployment: [Heroku](https://id.heroku.com/login)
+ - Testing: [Jest](https://jestjs.io/ru/) / [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 
 
 ## Getting Started
@@ -24,7 +25,7 @@ Please install the following software before starting development:
 ### Steps
   - Clone [repository](https://github.com/daler-developer/todo-list-mern)
   - Run `npm install` in root and 'client' folders
-  - Run `npm run dev` in root folder and `npm start` in 'client' folder
+  - Run `npm run dev` in root folder and `npm run dev` in 'client' folder
   - Open `https://localhost:3000` in a browser
   
    
