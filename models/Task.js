@@ -3,14 +3,17 @@ import mongoose from 'mongoose'
 
 const taskSchema = new mongoose.Schema({
   creator: {
-    type: mongoose.Schema.Types.ObjectId
+    type: mongoose.Schema.Types.ObjectId,
+    required: [true, 'Creator is require']
   },
   text: {
-    type: String
+    type: String,
+    required: [true, 'Text is require']
   },
   isCompleted: {
     type: Boolean,
-    default: false
+    default: false,
+    required: [true, 'isCompleted is require']
   }
 })
 
