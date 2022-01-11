@@ -1,12 +1,15 @@
 import { Provider } from "react-redux"
 import { render } from '@testing-library/react'
 import store from "redux/store"
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min"
 
 
 const Wrapper = ({ children }) => {
   return (
     <Provider store={store}>
-      {children}
+      <BrowserRouter>
+        {children}
+      </BrowserRouter>
     </Provider>
   )
 }

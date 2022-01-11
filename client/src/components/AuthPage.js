@@ -67,11 +67,11 @@ const AuthPage = () => {
   }
 
   return (
-    <div className="auth-page">
+    <div className="auth-page" role="auth-page">
       <form className="auth-page__form" onSubmit={form.handleSubmit}>
 
 
-        <h1 className="auth-page__title">
+        <h1 className="auth-page__title" role="auth-page-title">
           {getSelectedTab() === 'login' && 'Login'}
           {getSelectedTab() === 'register' && 'Register'}
         </h1>
@@ -89,6 +89,7 @@ const AuthPage = () => {
             className={classNames('auth-page__input', { 'auth-page__input--error': form.touched.username && form.errors.username })}
             placeholder="Username"
             {...form.getFieldProps('username')}
+            role="auth-page-username-input"
           />
         </div>
 
@@ -105,6 +106,7 @@ const AuthPage = () => {
             className={classNames('auth-page__input', { 'auth-page__input--error': form.touched.password && form.errors.password })}
             placeholder="Password"
             {...form.getFieldProps('password')}
+            role="auth-page-password-input"
           />
         </div>
 
@@ -116,13 +118,13 @@ const AuthPage = () => {
         <div className="auth-page__footer">
 
           {getSelectedTab() === 'login' && (
-            <Link to="/auth?tab=register">
+            <Link to="/auth?tab=register" role="auth-page-switch-to-register">
               Don't have an account? Register
             </Link>
           )}
 
           {getSelectedTab() === 'register' && (
-            <Link to="/auth?tab=login">
+            <Link to="/auth?tab=login" role="auth-page-switch-to-login">
               Already have an account? Login
             </Link>
           )}
